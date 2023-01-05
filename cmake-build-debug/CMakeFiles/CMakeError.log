@@ -1,0 +1,81 @@
+Performing C SOURCE FILE Test HAVE_MMSG_HDR failed with the following output:
+Change Dir: /Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/Users/josephyan/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/ninja/mac/ninja cmTC_9c4f4 && [1/2] Building C object CMakeFiles/cmTC_9c4f4.dir/src.c.o
+FAILED: CMakeFiles/cmTC_9c4f4.dir/src.c.o 
+/opt/homebrew/Cellar/gcc/11.3.0_2/bin/gcc-11 -DHAVE_MMSG_HDR -D_GNU_SOURCE  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -o CMakeFiles/cmTC_9c4f4.dir/src.c.o -c /Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp/src.c
+/Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp/src.c: In function 'main':
+/Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp/src.c:6:37: error: invalid use of undefined type 'struct mmsghdr'
+    6 |   (void)sizeof(((struct mmsghdr *)0)->msg_hdr);
+      |                                     ^~
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+
+#include <sys/socket.h>
+
+int main()
+{
+  (void)sizeof(((struct mmsghdr *)0)->msg_hdr);
+  return 0;
+}
+
+Determining if the sendmmsg exist failed with the following output:
+Change Dir: /Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/Users/josephyan/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/ninja/mac/ninja cmTC_960b3 && [1/2] Building C object CMakeFiles/cmTC_960b3.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_960b3.dir/CheckSymbolExists.c.o 
+/opt/homebrew/Cellar/gcc/11.3.0_2/bin/gcc-11 -D_GNU_SOURCE  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -o CMakeFiles/cmTC_960b3.dir/CheckSymbolExists.c.o -c /Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function 'main':
+/Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: 'sendmmsg' undeclared (first use in this function); did you mean 'sendmsg'?
+    8 |   return ((int*)(&sendmmsg))[argc];
+      |                   ^~~~~~~~
+      |                   sendmsg
+/Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File /Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/socket.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef sendmmsg
+  return ((int*)(&sendmmsg))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the recvmmsg exist failed with the following output:
+Change Dir: /Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/Users/josephyan/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/ninja/mac/ninja cmTC_98435 && [1/2] Building C object CMakeFiles/cmTC_98435.dir/CheckSymbolExists.c.o
+FAILED: CMakeFiles/cmTC_98435.dir/CheckSymbolExists.c.o 
+/opt/homebrew/Cellar/gcc/11.3.0_2/bin/gcc-11 -D_GNU_SOURCE  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -o CMakeFiles/cmTC_98435.dir/CheckSymbolExists.c.o -c /Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function 'main':
+/Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: 'recvmmsg' undeclared (first use in this function); did you mean 'recvmsg'?
+    8 |   return ((int*)(&recvmmsg))[argc];
+      |                   ^~~~~~~~
+      |                   recvmsg
+/Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+ninja: build stopped: subcommand failed.
+
+
+File /Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/socket.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef recvmmsg
+  return ((int*)(&recvmmsg))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

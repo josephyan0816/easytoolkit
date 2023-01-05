@@ -1,0 +1,8 @@
+//
+// Created by Joseph Yan on 2023/1/5.
+//
+
+#ifndef EASYTOOLKIT_SEMAPHORE_H
+#define EASYTOOLKIT_SEMAPHORE_H
+
+#endif //EASYTOOLKIT_SEMAPHORE_H
