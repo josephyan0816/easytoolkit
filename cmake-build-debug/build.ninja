@@ -40,6 +40,106 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = /Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target easytoolkit_shared
+
+
+#############################################
+# Order-only phony target for easytoolkit_shared
+
+build cmake_object_order_depends_target_easytoolkit_shared: phony || CMakeFiles/easytoolkit_shared.dir
+
+build CMakeFiles/easytoolkit_shared.dir/src/Util/List.cpp.o: CXX_COMPILER__easytoolkit_shared_Debug /Users/josephyan/CLionProjects/easytoolkit/src/Util/List.cpp || cmake_object_order_depends_target_easytoolkit_shared
+  DEFINES = -Deasytoolkit_shared_EXPORTS
+  DEP_FILE = CMakeFiles/easytoolkit_shared.dir/src/Util/List.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -fPIC -Wno-deprecated-declarations -Wno-predefined-identifier-outside-function -std=gnu++11
+  INCLUDES = -I/Users/josephyan/CLionProjects/easytoolkit/src
+  OBJECT_DIR = CMakeFiles/easytoolkit_shared.dir
+  OBJECT_FILE_DIR = CMakeFiles/easytoolkit_shared.dir/src/Util
+
+build CMakeFiles/easytoolkit_shared.dir/src/Util/logger.cpp.o: CXX_COMPILER__easytoolkit_shared_Debug /Users/josephyan/CLionProjects/easytoolkit/src/Util/logger.cpp || cmake_object_order_depends_target_easytoolkit_shared
+  DEFINES = -Deasytoolkit_shared_EXPORTS
+  DEP_FILE = CMakeFiles/easytoolkit_shared.dir/src/Util/logger.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -fPIC -Wno-deprecated-declarations -Wno-predefined-identifier-outside-function -std=gnu++11
+  INCLUDES = -I/Users/josephyan/CLionProjects/easytoolkit/src
+  OBJECT_DIR = CMakeFiles/easytoolkit_shared.dir
+  OBJECT_FILE_DIR = CMakeFiles/easytoolkit_shared.dir/src/Util
+
+build CMakeFiles/easytoolkit_shared.dir/src/Util/util.cpp.o: CXX_COMPILER__easytoolkit_shared_Debug /Users/josephyan/CLionProjects/easytoolkit/src/Util/util.cpp || cmake_object_order_depends_target_easytoolkit_shared
+  DEFINES = -Deasytoolkit_shared_EXPORTS
+  DEP_FILE = CMakeFiles/easytoolkit_shared.dir/src/Util/util.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -fPIC -Wno-deprecated-declarations -Wno-predefined-identifier-outside-function -std=gnu++11
+  INCLUDES = -I/Users/josephyan/CLionProjects/easytoolkit/src
+  OBJECT_DIR = CMakeFiles/easytoolkit_shared.dir
+  OBJECT_FILE_DIR = CMakeFiles/easytoolkit_shared.dir/src/Util
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target easytoolkit_shared
+
+
+#############################################
+# Link the shared library lib/libeasytoolkit.dylib
+
+build lib/libeasytoolkit.dylib: CXX_SHARED_LIBRARY_LINKER__easytoolkit_shared_Debug CMakeFiles/easytoolkit_shared.dir/src/Util/List.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/logger.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/util.cpp.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk
+  INSTALLNAME_DIR = @rpath/
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles/easytoolkit_shared.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  SONAME = libeasytoolkit.dylib
+  SONAME_FLAG = -install_name
+  TARGET_FILE = lib/libeasytoolkit.dylib
+  TARGET_PDB = easytoolkit.dylib.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target easytoolkit_static
+
+
+#############################################
+# Order-only phony target for easytoolkit_static
+
+build cmake_object_order_depends_target_easytoolkit_static: phony || CMakeFiles/easytoolkit_static.dir
+
+build CMakeFiles/easytoolkit_static.dir/src/Util/List.cpp.o: CXX_COMPILER__easytoolkit_static_Debug /Users/josephyan/CLionProjects/easytoolkit/src/Util/List.cpp || cmake_object_order_depends_target_easytoolkit_static
+  DEP_FILE = CMakeFiles/easytoolkit_static.dir/src/Util/List.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -Wno-deprecated-declarations -Wno-predefined-identifier-outside-function -std=gnu++11
+  INCLUDES = -I/Users/josephyan/CLionProjects/easytoolkit/src
+  OBJECT_DIR = CMakeFiles/easytoolkit_static.dir
+  OBJECT_FILE_DIR = CMakeFiles/easytoolkit_static.dir/src/Util
+
+build CMakeFiles/easytoolkit_static.dir/src/Util/logger.cpp.o: CXX_COMPILER__easytoolkit_static_Debug /Users/josephyan/CLionProjects/easytoolkit/src/Util/logger.cpp || cmake_object_order_depends_target_easytoolkit_static
+  DEP_FILE = CMakeFiles/easytoolkit_static.dir/src/Util/logger.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -Wno-deprecated-declarations -Wno-predefined-identifier-outside-function -std=gnu++11
+  INCLUDES = -I/Users/josephyan/CLionProjects/easytoolkit/src
+  OBJECT_DIR = CMakeFiles/easytoolkit_static.dir
+  OBJECT_FILE_DIR = CMakeFiles/easytoolkit_static.dir/src/Util
+
+build CMakeFiles/easytoolkit_static.dir/src/Util/util.cpp.o: CXX_COMPILER__easytoolkit_static_Debug /Users/josephyan/CLionProjects/easytoolkit/src/Util/util.cpp || cmake_object_order_depends_target_easytoolkit_static
+  DEP_FILE = CMakeFiles/easytoolkit_static.dir/src/Util/util.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -Wno-deprecated-declarations -Wno-predefined-identifier-outside-function -std=gnu++11
+  INCLUDES = -I/Users/josephyan/CLionProjects/easytoolkit/src
+  OBJECT_DIR = CMakeFiles/easytoolkit_static.dir
+  OBJECT_FILE_DIR = CMakeFiles/easytoolkit_static.dir/src/Util
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target easytoolkit_static
+
+
+#############################################
+# Link the static library lib/libeasytoolkit.a
+
+build lib/libeasytoolkit.a: CXX_STATIC_LIBRARY_LINKER__easytoolkit_static_Debug CMakeFiles/easytoolkit_static.dir/src/Util/List.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/logger.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/util.cpp.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles/easytoolkit_static.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = lib/libeasytoolkit.a
+  TARGET_PDB = easytoolkit.a.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -108,6 +208,14 @@ build install/strip: phony CMakeFiles/install/strip.util
 # =============================================================================
 # Target aliases.
 
+build easytoolkit_shared: phony lib/libeasytoolkit.dylib
+
+build easytoolkit_static: phony lib/libeasytoolkit.a
+
+build libeasytoolkit.a: phony lib/libeasytoolkit.a
+
+build libeasytoolkit.dylib: phony lib/libeasytoolkit.dylib
+
 # =============================================================================
 # Folder targets.
 
@@ -116,7 +224,7 @@ build install/strip: phony CMakeFiles/install/strip.util
 #############################################
 # Folder: /Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug
 
-build all: phony
+build all: phony lib/libeasytoolkit.dylib lib/libeasytoolkit.a
 
 # =============================================================================
 # Built-in targets
@@ -125,14 +233,14 @@ build all: phony
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeConfigurableFile.in /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCSourceCompiles.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCXXSourceCompiles.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckStructHasMember.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckSymbolExists.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Internal/CheckSourceCompiles.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-GNU-C.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-GNU-CXX.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-GNU.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCSourceCompiles.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCXXSourceCompiles.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckStructHasMember.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckSymbolExists.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindOpenSSL.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageMessage.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPkgConfig.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Internal/CheckSourceCompiles.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-GNU-C.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-GNU-CXX.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-GNU.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeConfigurableFile.in /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCSourceCompiles.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCXXSourceCompiles.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckStructHasMember.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckSymbolExists.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Internal/CheckSourceCompiles.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-GNU-C.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-GNU-CXX.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-GNU.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake: phony
+build ../CMakeLists.txt /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCSourceCompiles.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckCXXSourceCompiles.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckStructHasMember.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/CheckSymbolExists.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU-C.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Compiler/GNU.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindOpenSSL.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPackageMessage.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/FindPkgConfig.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Internal/CheckSourceCompiles.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-GNU-C.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-GNU-CXX.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Apple-GNU.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin-Initialize.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/Darwin.cmake /Users/josephyan/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.22.3/CMakeCCompiler.cmake CMakeFiles/3.22.3/CMakeCXXCompiler.cmake CMakeFiles/3.22.3/CMakeSystem.cmake: phony
 
 
 #############################################
