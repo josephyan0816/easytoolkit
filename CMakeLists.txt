@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
 project(easytoolkit)
 
-set(CMAKE_CXX_STANDARD 14)
-
 include(CheckStructHasMember)
 include(CheckSymbolExists)
 
@@ -20,6 +18,7 @@ endif()
 if(HAVE_RECVMMSG_API)
     add_definitions(-DHAVE_RECVMMSG_API)
 endif()
+
 
 #加载自定义模块
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
@@ -52,3 +51,71 @@ foreach(SUB_DIR ${SUB_DIR_LIST})
     #安装头文件至系统目录
     install(DIRECTORY src/${SUB_DIR} DESTINATION ${INSTALL_PATH_INCLUDE} FILES_MATCHING PATTERN "*.h")
 endforeach()
+
+#非苹果平台移除.mm类型的文件
+if(NOT APPLE)
+    list(REMOVE_ITEM SRC_LIST "src/Network/Socket_ios.mm")
+endif()
+
+if(WIN32)
+    set(LINK_LIB_LIST WS2_32 Iphlpapi shlwapi)
+else()
+    set(LINK_LIB_LIST)
+endif()
+
+
+set(ENABLE_OPENSSL ON CACHE BOOL "enable openssl")
+set(ENABLE_MYSQL ON CACHE BOOL "enable mysql")
+
+
+#查找openssl是否安装
+find_package(OpenSSL QUIET)
+if(OPENSSL_FOUND AND ENABLE_OPENSSL)
+    message(STATUS "找到openssl库:\"${OPENSSL_INCLUDE_DIR}\",ENABLE_OPENSSL宏已打开")
+    include_directories(${OPENSSL_INCLUDE_DIR})
+    add_definitions(-DENABLE_OPENSSL)
+    list(APPEND  LINK_LIB_LIST ${OPENSSL_LIBRARIES})
+endif()
+
+#查找mysql是否安装
+find_package(MYSQL QUIET)
+if(MYSQL_FOUND AND ENABLE_MYSQL)
+    message(STATUS "找到mysqlclient库:\"${MYSQL_INCLUDE_DIR}\",ENABLE_MYSQL宏已打开")
+    include_directories(${MYSQL_INCLUDE_DIR})
+    include_directories(${MYSQL_INCLUDE_DIR}/mysql)
+    add_definitions(-DENABLE_MYSQL)
+    list(APPEND  LINK_LIB_LIST ${MYSQL_LIBRARIES})
+endif()
+
+#打印库文件
+message(STATUS "将链接依赖库:${LINK_LIB_LIST}")
+#使能c++11
+set(CMAKE_CXX_STANDARD 11)
+
+if(NOT WIN32)
+    add_compile_options(-Wno-deprecated-declarations)
+    add_compile_options(-Wno-predefined-identifier-outside-function)
+endif()
+
+#编译动态库
+if(NOT IOS AND NOT ANDROID AND NOT WIN32)
+    add_library(${PROJECT_NAME}_shared SHARED ${SRC_LIST})
+    target_include_directories(${PROJECT_NAME}_shared PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+    target_link_libraries(${PROJECT_NAME}_shared ${LINK_LIB_LIST})
+    set_target_properties(${PROJECT_NAME}_shared PROPERTIES OUTPUT_NAME "${PROJECT_NAME}")
+    install(TARGETS ${PROJECT_NAME}_shared  ARCHIVE DESTINATION ${INSTALL_PATH_LIB} LIBRARY DESTINATION ${INSTALL_PATH_LIB})
+endif()
+
+#编译静态库
+add_library(${PROJECT_NAME}_static STATIC ${SRC_LIST})
+#引用头文件路径
+target_include_directories(${PROJECT_NAME}_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+set_target_properties(${PROJECT_NAME}_static PROPERTIES OUTPUT_NAME "${PROJECT_NAME}")
+#安装静态库至系统目录
+install(TARGETS ${PROJECT_NAME}_static ARCHIVE DESTINATION ${INSTALL_PATH_LIB})
+
+
+#测试程序
+#if(NOT IOS)
+#    add_subdirectory(tests)
+#endif()

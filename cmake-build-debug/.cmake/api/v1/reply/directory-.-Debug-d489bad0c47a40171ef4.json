@@ -17,25 +17,37 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 53,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 53,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 53,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 53,
+				"line" : 52,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 106,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 115,
 				"parent" : 0
 			}
 		]
@@ -81,6 +93,30 @@
 				"src/Util"
 			],
 			"type" : "directory"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"lib/libeasytoolkit.dylib"
+			],
+			"targetId" : "easytoolkit_shared::@6890427a1f51a3e7e1df",
+			"targetIndex" : 0,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"lib/libeasytoolkit.a"
+			],
+			"targetId" : "easytoolkit_static::@6890427a1f51a3e7e1df",
+			"targetIndex" : 1,
+			"type" : "target"
 		}
 	],
 	"paths" : 

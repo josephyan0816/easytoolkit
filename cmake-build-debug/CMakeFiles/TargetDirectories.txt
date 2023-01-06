@@ -1,3 +1,5 @@
+/Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/easytoolkit_shared.dir
+/Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/easytoolkit_static.dir
 /Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/josephyan/CLionProjects/easytoolkit/cmake-build-debug/CMakeFiles/list_install_components.dir
