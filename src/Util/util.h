@@ -7,7 +7,7 @@
 
 
 #include <ctime>
-#include <csdio>
+#include <cstdio>
 #include <cstring>
 #include <memory>
 #include <string>
@@ -15,6 +15,7 @@
 #include <vector>
 #include <atomic>
 #include <unordered_map>
+
 #if defined(_WIN32)
 #undef FD_SETSIZE
 //修改默认64为1024
@@ -22,14 +23,18 @@
 #include <winsock2.h>
 #pragma comment (lib,"WS2_32")
 #else
+
 #include <unistd.h>
 #include <sys/time.h>
 #include <sys/types.h>
 #include <cstddef>
+
 #endif //defined(_WIN32)
 
 #if defined(__APPLE__)
+
 #include "TargetConditionals.h"
+
 #if TARGET_IPHONE_SIMULATOR
 #define OS_IPHONE
 #elif TARGET_OS_IPHONE
@@ -44,16 +49,17 @@ class_name &class_name::Instance() { \
     return s_instance_ref; \
 }
 
-namespace toolkit{
+namespace toolkit {
 #define StrPrinter::toolkit::_StrPrinter()
-    class _StrPrinter:public std::string {
+
+    class _StrPrinter : public std::string {
     public:
-        _StrPrinter(){}
+        _StrPrinter() {}
 
         template<typename T>
-        _StrPrinter& operator <<(T && data){
-            _stream<<std::forward<T>(data);
-            this->std::string ::operator=(_stream.str());
+        _StrPrinter &operator<<(T &&data) {
+            _stream << std::forward<T>(data);
+            this->std::string::operator=(_stream.str());
             return *this;
         }
 
@@ -61,18 +67,46 @@ namespace toolkit{
         std::stringstream _stream;
     };
 
-    class noncopyable{
+    class noncopyable {
     protected:
-        noncopyable(){}
-        ~noncopyable(){}
+        noncopyable() {}
+
+        ~noncopyable() {}
+
     private:
         noncopyable(const noncopyable &that) = delete;
-        noncopyable(noncopyable &&that)=delete;
-        noncopyable &operator=(const noncopyable &that)=delete;
-        noncopyable &operator=(noncopyable &&that)=delete;
+
+        noncopyable(noncopyable &&that) = delete;
+
+        noncopyable &operator=(const noncopyable &that) = delete;
+
+        noncopyable &operator=(noncopyable &&that) = delete;
     };
 
 
+    template<class T>
+    class ObjectStatistic {
+
+    };
+
+#define StatisticImp(Type)  \
+    template<> \
+    std::atomic<size_t>& ObjectStatistic<Type>::getCounter(){ \
+        static std::atomic<size_t> instance(0); \
+        return instance; \
+    }
+
+    std::string makeRandStr(int sz, bool printable = true);
+
+    std::string hexdump(const void *buf, size_t len);
+
+    std::string hexmem(const void *buf, size_t len);
+
+    std::string exePath(bool isExe = true);
+
+    std::string exeDir(bool isExe = true);
+
+    std::string exeName(bool isExe = true);
 }
 
 class util {
