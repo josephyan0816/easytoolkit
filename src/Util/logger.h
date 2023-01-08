@@ -370,7 +370,91 @@ namespace toolkit {
         std::string _dir;
         std::set<std::string> _log_file_map;
     };
+#if defined(__MACH__) || ((defined(__linux) || defined(__linux__)) && !defined(ANDROID))
+    class SysLogChannel:public LogChannel{
+    public:
+        SysLogChannel(const std::string &name="SysLogChannel",LogLevel level=LTrace);
+        ~SysLogChannel() override=default;
 
+        void write(const Logger &logger,const LogContextPtr &logContext) override;
+    };
+#endif//#if defined(__MACH__) || ((defined(__linux) || defined(__linux__)) &&  !defined(ANDROID))
+
+    class BaseLogFlagInterface{
+    protected:
+        virtual ~BaseLogFlagInterface(){}
+        //获得日志标记flag
+        const char* getLogFlag(){
+            return _log_flag;
+        }
+        void setLogFlag(const char *flag){_log_flag=flag;}
+    private:
+        const char *_log_flag="";
+    };
+
+    class LoggerWrapper{
+    public:
+        template<typename First,typename  ...ARGS>
+        static inline void printLogArray(Logger &logger,LogLevel level,const char *file,const char *function,int line,First &&first,ARGS &&...args){
+            LogContextCapture log(logger,level,file,function,line);
+            log<<std::forward<First>(first);
+            appendLog(log,std::forward<ARGS>(args)...);
+        }
+
+        static inline void printLogArray(Logger &logger,LogLevel level,const char *file,const char *function,int line){
+            LogContextCapture log(logger,level,file,function,line);
+        }
+
+        template<typename Log,typename First,typename ...ARGS>
+        static inline void appendLog(Log &out,First &&first,ARGS &&...args){
+            out<<std::forward<First>(first);
+            appendLog(out,std::forward<ARGS>(args)...);
+        }
+
+        template<typename Log>
+        static inline void appendLog(Log &out){}
+
+        static void printLog(Logger &logger,int level,const char *file,const char *function,int line,const char *fmt,...);
+        static void printLogV(Logger &logger,int level,const char *file,const char *function,int line,const char *fmt,va_list ap);
+    };
+
+    //可重置默认值
+    extern Logger *g_defaultLogger;
+
+
+    //用法:Debug << 1 << "+" <<2 << '=' << 3;
+#define WriteL(level)::toolkit::LogContextCapture(::toolkit::getLogger(),level,__FILE__,__FUNCTION__,__LINE__)
+#define TraceL WriteL(::toolkit::LTrace)
+#define DebugL WriteL(::toolkit::LDebug)
+#define InfoL WriteL(::toolkit::LInfo)
+#define WarnL WriteL(::toolkit::LWarn)
+#define ErrorL WriteL(::toolkit::LError)
+
+//只能在虚继承BaseLogFlagInterface的类中使用
+#define WriteF(level)::toolkit::LogContextCapture(::toolkit::getLogger(),level,__FILE__,__FUNCTION__,__LINE__,getLogFlag())
+#define TraceF WriteF(::toolkit::LTrace)
+#define DebugF WriteF(::toolkit::LDebug)
+#define InfoF WriteF(::toolkit::LInfo)
+#define WarnF WriteF(::toolkit::LWarn)
+#define ErrorF WriteF(::toolkit::LError)
+
+
+//用法: PrintD("%d + %s = %c", 1 "2", 'c');
+#define PrintLog(level, ...) ::toolkit::LoggerWrapper::printLog(::toolkit::getLogger(), level, __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define PrintT(...) PrintLog(::toolkit::LTrace, ##__VA_ARGS__)
+#define PrintD(...) PrintLog(::toolkit::LDebug, ##__VA_ARGS__)
+#define PrintI(...) PrintLog(::toolkit::LInfo, ##__VA_ARGS__)
+#define PrintW(...) PrintLog(::toolkit::LWarn, ##__VA_ARGS__)
+#define PrintE(...) PrintLog(::toolkit::LError, ##__VA_ARGS__)
+
+//用法: LogD(1, "+", "2", '=', 3);
+//用于模板实例化的原因，如果每次打印参数个数和类型不一致，可能会导致二进制代码膨胀
+#define LogL(level, ...) ::toolkit::LoggerWrapper::printLogArray(::toolkit::getLogger(), (LogLevel)level, __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define LogT(...) LogL(::toolkit::LTrace, ##__VA_ARGS__)
+#define LogD(...) LogL(::toolkit::LDebug, ##__VA_ARGS__)
+#define LogI(...) LogL(::toolkit::LInfo, ##__VA_ARGS__)
+#define LogW(...) LogL(::toolkit::LWarn, ##__VA_ARGS__)
+#define LogE(...) LogL(::toolkit::LError, ##__VA_ARGS__)
 }
 
 
