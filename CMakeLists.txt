@@ -99,7 +99,7 @@ endif()
 
 #编译动态库
 if(NOT IOS AND NOT ANDROID AND NOT WIN32)
-    add_library(${PROJECT_NAME}_shared SHARED ${SRC_LIST})
+    add_library(${PROJECT_NAME}_shared SHARED ${SRC_LIST} src/Util/onceToken.h src/Util/File.h)
     target_include_directories(${PROJECT_NAME}_shared PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
     target_link_libraries(${PROJECT_NAME}_shared ${LINK_LIB_LIST})
     set_target_properties(${PROJECT_NAME}_shared PROPERTIES OUTPUT_NAME "${PROJECT_NAME}")
