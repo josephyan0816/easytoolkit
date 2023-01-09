@@ -159,7 +159,8 @@
 			"sourceIndexes" : 
 			[
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -191,6 +192,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "src/Util/File.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/Util/NoticeCenter.h",
 			"sourceGroupIndex" : 1
 		}
 	],

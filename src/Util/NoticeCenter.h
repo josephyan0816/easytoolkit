@@ -1,0 +1,8 @@
+//
+// Created by Joseph Yan on 2023/1/9.
+//
+
+#ifndef EASYTOOLKIT_NOTICECENTER_H
+#define EASYTOOLKIT_NOTICECENTER_H
+
+#endif //EASYTOOLKIT_NOTICECENTER_H
