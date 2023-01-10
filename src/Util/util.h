@@ -294,6 +294,13 @@ const char *strcasestr(const char *big, const char *little);
     struct tm getLocalTime(time_t sec);
 
     /**
+     * 设置线程名
+     */
+    std::string setThreadName(const char *name);
+
+
+
+    /**
      * 获取线程名
      */
     std::string getThreadName();

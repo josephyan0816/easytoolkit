@@ -176,20 +176,105 @@ namespace toolkit {
 
     LogContext::LogContext(LogLevel level, const char *file, const char *function, int line, const char *module_name,
                            const char *flag) : _level(level), _line(line), _file(getFileName(file)),
-                                               _function(getFunctionName(function)),_module_name(module_name),_flag(flag) {
+                                               _function(getFunctionName(function)), _module_name(module_name),
+                                               _flag(flag) {
         gettimeofday(&_tv, nullptr);
-        _thread_name=getThreadName();
+        _thread_name = getThreadName();
     }
 
 
     const string &LogContext::str() {
-        if(_got_content){
+        if (_got_content) {
             return _content;
         }
-        _content=ostringstream::str();
-        _got_content=true;
+        _content = ostringstream::str();
+        _got_content = true;
         return _content;
     }
 
+///////////////////AsyncLogWriter///////////////////
+
+    static string s_module_name = exeName(false);
+
+    LogContextCapture::LogContextCapture(Logger &logger, LogLevel level, const char *file, const char *function,
+                                         int line, const char *flag) : (new LogContext(level, file, function, line,
+                                                                                       s_module_name.c_str(), falg)),
+                                                                       _logger(logger) {
+
+    }
+
+    LogContextCapture::LogContextCapture(const LogContextCapture &that) : _ctx(that._ctx), _logger(that._logger) {
+        const_cast<LogContextPtr &>(that._ctx).reset();
+    }
+
+    LogContextCapture::~LogContextCapture() {
+        *this << endl;
+    }
+
+    LogContextCapture &LogContextCapture::operator<<(ostream &(*f)(ostream &)) {
+        if (!_ctx) {
+            return *this;
+        }
+        _logger.write(_ctx);
+        _ctx.reset();
+        return *this;
+    }
+
+    void LogContextCapture::clear() {
+        _ctx.reset();
+    }
+///////////////////AsyncLogWriter///////////////////
+
+    AsyncLogWriter::AsyncLogWriter() : _exit_flag(false) {
+        _thread = std::make_shared<thread>([this]() { this->run(); });
+    }
+
+    AsyncLogWriter::~AsyncLogWriter() {
+        _exit_flag = true;
+        _sem.post();
+        _thread->join();
+        flushAll();
+    }
+
+    void AsyncLogWriter::write(const LogContextPtr &ctx, Logger &logger) {
+        {
+            lock_guard<mutex> lock(_mutex);
+            _pending.emplace_back(std::make_pair(ctx, &logger));
+
+        }
+        _sem.post();
+    }
+
+    void AsyncLogWriter::run() {
+        setThreadName("async log");
+        while (!_exit_flag){
+            _sem.wait();
+            flushAll();
+        }
+    }
+
+    void AsyncLogWriter::flushAll() {
+        decltype(_pending) tmp;
+        {
+            lock_guard<mutex> lock(_mutex);
+            tmp.swap(_pending);
+        }
+        tmp.for_each([&](std::pair<LogContextPtr,Logger *> &pr){
+           pr.second->writeChannels(pr.first);
+        });
+    }
+
+///////////////////EventChannel////////////////////
+
+    const string EventChannel::kBroadcastLogEvent = "kBroadcastLogEvent";
+
+    EventChannel::EventChannel(const string &name, LogLevel level) :LogChannel(name,level){}
+
+    void EventChannel::write(const Logger &logger, const LogContextPtr &ctx) {
+        if(_level>ctx->_level){
+            return;
+        }
+        NoticeCenter::Instance().emitEvent(kBroadcastLogEvent,logger,ctx);
+    }
 
 }
