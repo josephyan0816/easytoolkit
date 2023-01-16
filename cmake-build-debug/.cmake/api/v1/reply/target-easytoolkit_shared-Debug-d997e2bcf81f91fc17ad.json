@@ -169,7 +169,8 @@
 				8,
 				9,
 				10,
-				11
+				11,
+				12
 			]
 		}
 	],
@@ -239,6 +240,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "src/Util/mini.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/Util/ResourcePool.h",
 			"sourceGroupIndex" : 1
 		}
 	],
