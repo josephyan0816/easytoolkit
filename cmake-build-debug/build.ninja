@@ -57,6 +57,14 @@ build CMakeFiles/easytoolkit_shared.dir/src/Network/Buffer.cpp.o: CXX_COMPILER__
   OBJECT_DIR = CMakeFiles/easytoolkit_shared.dir
   OBJECT_FILE_DIR = CMakeFiles/easytoolkit_shared.dir/src/Network
 
+build CMakeFiles/easytoolkit_shared.dir/src/Network/sockutil.cpp.o: CXX_COMPILER__easytoolkit_shared_Debug /Users/josephyan/CLionProjects/easytoolkit/src/Network/sockutil.cpp || cmake_object_order_depends_target_easytoolkit_shared
+  DEFINES = -Deasytoolkit_shared_EXPORTS
+  DEP_FILE = CMakeFiles/easytoolkit_shared.dir/src/Network/sockutil.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -fPIC -Wno-deprecated-declarations -Wno-predefined-identifier-outside-function -std=gnu++11
+  INCLUDES = -I/Users/josephyan/CLionProjects/easytoolkit/src
+  OBJECT_DIR = CMakeFiles/easytoolkit_shared.dir
+  OBJECT_FILE_DIR = CMakeFiles/easytoolkit_shared.dir/src/Network
+
 build CMakeFiles/easytoolkit_shared.dir/src/Poller/EventPoller.cpp.o: CXX_COMPILER__easytoolkit_shared_Debug /Users/josephyan/CLionProjects/easytoolkit/src/Poller/EventPoller.cpp || cmake_object_order_depends_target_easytoolkit_shared
   DEFINES = -Deasytoolkit_shared_EXPORTS
   DEP_FILE = CMakeFiles/easytoolkit_shared.dir/src/Poller/EventPoller.cpp.o.d
@@ -161,6 +169,14 @@ build CMakeFiles/easytoolkit_shared.dir/src/Util/util.cpp.o: CXX_COMPILER__easyt
   OBJECT_DIR = CMakeFiles/easytoolkit_shared.dir
   OBJECT_FILE_DIR = CMakeFiles/easytoolkit_shared.dir/src/Util
 
+build CMakeFiles/easytoolkit_shared.dir/src/Util/uv_errno.cpp.o: CXX_COMPILER__easytoolkit_shared_Debug /Users/josephyan/CLionProjects/easytoolkit/src/Util/uv_errno.cpp || cmake_object_order_depends_target_easytoolkit_shared
+  DEFINES = -Deasytoolkit_shared_EXPORTS
+  DEP_FILE = CMakeFiles/easytoolkit_shared.dir/src/Util/uv_errno.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -fPIC -Wno-deprecated-declarations -Wno-predefined-identifier-outside-function -std=gnu++11
+  INCLUDES = -I/Users/josephyan/CLionProjects/easytoolkit/src
+  OBJECT_DIR = CMakeFiles/easytoolkit_shared.dir
+  OBJECT_FILE_DIR = CMakeFiles/easytoolkit_shared.dir/src/Util
+
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target easytoolkit_shared
@@ -169,7 +185,7 @@ build CMakeFiles/easytoolkit_shared.dir/src/Util/util.cpp.o: CXX_COMPILER__easyt
 #############################################
 # Link the shared library lib/libeasytoolkit.dylib
 
-build lib/libeasytoolkit.dylib: CXX_SHARED_LIBRARY_LINKER__easytoolkit_shared_Debug CMakeFiles/easytoolkit_shared.dir/src/Network/Buffer.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Poller/EventPoller.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Poller/Pipe.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Poller/PipeWrap.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Poller/SelectWrap.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Poller/Timer.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Thread/TaskExecutor.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Thread/WorkThreadPool.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/CMD.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/List.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/NoticeCenter.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/logger.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/mini.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/util.cpp.o
+build lib/libeasytoolkit.dylib: CXX_SHARED_LIBRARY_LINKER__easytoolkit_shared_Debug CMakeFiles/easytoolkit_shared.dir/src/Network/Buffer.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Network/sockutil.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Poller/EventPoller.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Poller/Pipe.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Poller/PipeWrap.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Poller/SelectWrap.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Poller/Timer.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Thread/TaskExecutor.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Thread/WorkThreadPool.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/CMD.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/List.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/NoticeCenter.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/logger.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/mini.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/util.cpp.o CMakeFiles/easytoolkit_shared.dir/src/Util/uv_errno.cpp.o
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk
   INSTALLNAME_DIR = @rpath/
   LANGUAGE_COMPILE_FLAGS = -g
@@ -192,6 +208,13 @@ build cmake_object_order_depends_target_easytoolkit_static: phony || CMakeFiles/
 
 build CMakeFiles/easytoolkit_static.dir/src/Network/Buffer.cpp.o: CXX_COMPILER__easytoolkit_static_Debug /Users/josephyan/CLionProjects/easytoolkit/src/Network/Buffer.cpp || cmake_object_order_depends_target_easytoolkit_static
   DEP_FILE = CMakeFiles/easytoolkit_static.dir/src/Network/Buffer.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -Wno-deprecated-declarations -Wno-predefined-identifier-outside-function -std=gnu++11
+  INCLUDES = -I/Users/josephyan/CLionProjects/easytoolkit/src
+  OBJECT_DIR = CMakeFiles/easytoolkit_static.dir
+  OBJECT_FILE_DIR = CMakeFiles/easytoolkit_static.dir/src/Network
+
+build CMakeFiles/easytoolkit_static.dir/src/Network/sockutil.cpp.o: CXX_COMPILER__easytoolkit_static_Debug /Users/josephyan/CLionProjects/easytoolkit/src/Network/sockutil.cpp || cmake_object_order_depends_target_easytoolkit_static
+  DEP_FILE = CMakeFiles/easytoolkit_static.dir/src/Network/sockutil.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -Wno-deprecated-declarations -Wno-predefined-identifier-outside-function -std=gnu++11
   INCLUDES = -I/Users/josephyan/CLionProjects/easytoolkit/src
   OBJECT_DIR = CMakeFiles/easytoolkit_static.dir
@@ -288,6 +311,13 @@ build CMakeFiles/easytoolkit_static.dir/src/Util/util.cpp.o: CXX_COMPILER__easyt
   OBJECT_DIR = CMakeFiles/easytoolkit_static.dir
   OBJECT_FILE_DIR = CMakeFiles/easytoolkit_static.dir/src/Util
 
+build CMakeFiles/easytoolkit_static.dir/src/Util/uv_errno.cpp.o: CXX_COMPILER__easytoolkit_static_Debug /Users/josephyan/CLionProjects/easytoolkit/src/Util/uv_errno.cpp || cmake_object_order_depends_target_easytoolkit_static
+  DEP_FILE = CMakeFiles/easytoolkit_static.dir/src/Util/uv_errno.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -Wno-deprecated-declarations -Wno-predefined-identifier-outside-function -std=gnu++11
+  INCLUDES = -I/Users/josephyan/CLionProjects/easytoolkit/src
+  OBJECT_DIR = CMakeFiles/easytoolkit_static.dir
+  OBJECT_FILE_DIR = CMakeFiles/easytoolkit_static.dir/src/Util
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target easytoolkit_static
@@ -296,7 +326,7 @@ build CMakeFiles/easytoolkit_static.dir/src/Util/util.cpp.o: CXX_COMPILER__easyt
 #############################################
 # Link the static library lib/libeasytoolkit.a
 
-build lib/libeasytoolkit.a: CXX_STATIC_LIBRARY_LINKER__easytoolkit_static_Debug CMakeFiles/easytoolkit_static.dir/src/Network/Buffer.cpp.o CMakeFiles/easytoolkit_static.dir/src/Poller/EventPoller.cpp.o CMakeFiles/easytoolkit_static.dir/src/Poller/Pipe.cpp.o CMakeFiles/easytoolkit_static.dir/src/Poller/PipeWrap.cpp.o CMakeFiles/easytoolkit_static.dir/src/Poller/SelectWrap.cpp.o CMakeFiles/easytoolkit_static.dir/src/Poller/Timer.cpp.o CMakeFiles/easytoolkit_static.dir/src/Thread/TaskExecutor.cpp.o CMakeFiles/easytoolkit_static.dir/src/Thread/WorkThreadPool.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/CMD.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/List.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/NoticeCenter.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/logger.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/mini.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/util.cpp.o
+build lib/libeasytoolkit.a: CXX_STATIC_LIBRARY_LINKER__easytoolkit_static_Debug CMakeFiles/easytoolkit_static.dir/src/Network/Buffer.cpp.o CMakeFiles/easytoolkit_static.dir/src/Network/sockutil.cpp.o CMakeFiles/easytoolkit_static.dir/src/Poller/EventPoller.cpp.o CMakeFiles/easytoolkit_static.dir/src/Poller/Pipe.cpp.o CMakeFiles/easytoolkit_static.dir/src/Poller/PipeWrap.cpp.o CMakeFiles/easytoolkit_static.dir/src/Poller/SelectWrap.cpp.o CMakeFiles/easytoolkit_static.dir/src/Poller/Timer.cpp.o CMakeFiles/easytoolkit_static.dir/src/Thread/TaskExecutor.cpp.o CMakeFiles/easytoolkit_static.dir/src/Thread/WorkThreadPool.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/CMD.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/List.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/NoticeCenter.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/logger.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/mini.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/util.cpp.o CMakeFiles/easytoolkit_static.dir/src/Util/uv_errno.cpp.o
   ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/easytoolkit_static.dir

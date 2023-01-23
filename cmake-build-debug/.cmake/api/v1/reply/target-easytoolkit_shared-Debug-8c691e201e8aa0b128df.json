@@ -113,7 +113,9 @@
 				10,
 				11,
 				12,
-				13
+				13,
+				14,
+				15
 			]
 		}
 	],
@@ -173,15 +175,15 @@
 				10,
 				11,
 				12,
-				13
+				13,
+				14,
+				15
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				14,
-				15,
 				16,
 				17,
 				18,
@@ -198,7 +200,11 @@
 				29,
 				30,
 				31,
-				32
+				32,
+				33,
+				34,
+				35,
+				36
 			]
 		}
 	],
@@ -208,6 +214,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/Network/Buffer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Network/sockutil.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -286,6 +298,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/Util/util.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Util/uv_errno.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -381,6 +399,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "src/Util/TimeTicker.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/Network/sockutil.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/Util/uv_errno.h",
 			"sourceGroupIndex" : 1
 		}
 	],

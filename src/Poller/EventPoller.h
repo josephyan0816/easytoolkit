@@ -217,8 +217,79 @@ namespace toolkit {
         Logger::Ptr _logger;
 
 
+#if defined(HAS_EPOLL)
+        //epoll相关
+    int _epoll_fd = -1;
+    unordered_map<int, std::shared_ptr<PollEventCB> > _event_map;
+#else
+        //select相关
+        struct Poll_Record {
+            using Ptr = std::shared_ptr<Poll_Record>;
+            int event;
+            int attach;
+            PollEventCB call_back;
+        };
+        unordered_map<int, Poll_Record::Ptr> _event_map;
+#endif //HAS_EPOLL
+
+        //定时器相关
+        std::multimap<uint64_t, DelayTask::Ptr> _delay_task_map;
     };
 
+    class EventPollerPool : public std::enable_shared_from_this<EventPollerPool>, public TaskExecutorGetterImp {
+    public:
+        using Ptr = std::shared_ptr<EventPollerPool>;
+
+        /**
+         * 获取单例
+         * @return
+         */
+        static EventPollerPool &Instance();
+
+
+        /**
+         * 设置EventPoller个数，在EventPollerPool单例创建前有效
+         * 在不调用此方法的情况下，默认创建thread::hardware_concurrency()个EventPoller实例
+         * @param size EventPoller个数，如果为0则表示thread::hardware_concurrency()
+         */
+        static void setPoolSize(size_t size = 0);
+
+
+        /**
+         * 内部创建线程是否设置CPU亲和性，默认设置CPU亲和性
+         */
+        static void enableCpuAffinity(bool enable);
+
+        /**
+         * 获取第一个实例
+         * @return
+         */
+        EventPoller::Ptr getFirstPoller();
+
+
+        /**
+         * 根据负载情况获取轻负载的实例
+         * 如果优先返回当前线程，那么会返回当前线程
+         * 返回当前线程的目的是为了提高线程安全性
+         * @param prefer_current_thread 是否优先获取当前线程
+         */
+        EventPoller::Ptr getPoller(bool prefer_current_thread = true);
+
+        /**
+         * 设置getPoller()是否优先返回当前线程
+         * 在批量创建socket对象时，如果优先返回当前线程，
+         * 那么将导致负载不够均衡，所以可以暂时关闭然后再开启
+         * @param flag 是否优先返回当前线程
+         */
+        void preferCurrentThread(bool flag = true);
+
+
+    private:
+        EventPollerPool();
+
+    private:
+        bool _prefer_current_thread = true;
+    };
 
 }
 
