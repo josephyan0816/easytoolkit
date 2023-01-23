@@ -42,14 +42,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "easytoolkit_shared::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-easytoolkit_shared-Debug-ceab3a96897a686bae5b.json",
+					"jsonFile" : "target-easytoolkit_shared-Debug-8c691e201e8aa0b128df.json",
 					"name" : "easytoolkit_shared",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "easytoolkit_static::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-easytoolkit_static-Debug-225c5566f8e2a9fc0b74.json",
+					"jsonFile" : "target-easytoolkit_static-Debug-c17a142eca13363f8d91.json",
 					"name" : "easytoolkit_static",
 					"projectIndex" : 0
 				}
